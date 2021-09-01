@@ -1,0 +1,23 @@
+.btn1{
+    margin-left: 130px;
+    margin-top:10px;
+}
+.size{
+margin-left:130px;
+margin-top: 40px;
+margin-right: 700px;
+}
+@media (max-width:1000px) and (min-width:360px){
+    .size{
+        
+        margin-left:25px ;
+        margin-top: 30px ;
+        margin-right: 50px;
+        }
+        .btn1{
+            margin-left: 25px;
+            
+        }
+   
+}
+

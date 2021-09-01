@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Classifier</title>
+    <link href="{{ url_for('static', filename='web.css') }}" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Baloo+Chettan+2:wght@500&display=swap" rel="stylesheet">
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+        integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+        integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+        crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+        integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+        crossorigin="anonymous"></script>
+
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light" style="background-color:  #ccf5ff;">
+        <h1 class="navbar-brand" href="#">cat_dog_classifier</h1>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item active">
+                    <a class="nav-link" href="/">Home<span class="sr-only">(current)</span></a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link"
+                        href="https://drive.google.com/drive/folders/14JCXQk9vZyE644ylJMX1i079Z96k14YP?usp=sharing"
+                        target="_blank">download_Dataset</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link"
+                        href="https://frozen-eyrie-25818.herokuapp.com/"
+                        target="_blank">Contact</a>
+                </li>
+              
+ 
+ 
+ 
+
+
+
+
+            </ul>
+        </div>
+    </nav>
+
+    <div class="form-group">
+        <form action="/success" method="post" enctype="multipart/form-data">
+            <div class=" size mb-3">
+                <label for="formFile" class="form-label" style=" font-family: 'Baloo Chettan 2', cursive;">cat/dog
+                    image</label>
+                <input class=" file form-control" required name="u_img" type="file" id="formFile">
+            </div>
+            <button type="submit" class=" btn1 btn btn-primary">Predict</button>
+        </form>
+    </div>
+    {% if pred %}
+    <div>
+        <h1 style=" font-family: 'Baloo Chettan 2', cursive; margin-left: 350px; margin-top: 50px;" class="last">
+            {{pred}}<img src="/static/img/Cat.png" style="margin-left:10px; width:40px"></h1>
+    </div>
+    {% endif %}
+
+    {% if pred1 %}
+    <div>
+        <h1 style=" font-family: 'Baloo Chettan 2', cursive;margin-left: 350px; margin-top: 50px;" class="last">
+            {{pred1}}<img src="/static/img/Dog.png" style="margin-left:10px; width:40px"></h1>
+    </div>
+    {% endif %}
+
+
+
+
+
+</body>
+
+</html>
